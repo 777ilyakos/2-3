@@ -1,0 +1,13 @@
+﻿<Window x:Class="pract_2_3_var_5.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pract_2_3_var_5"
+        mc:Ignorable="d"
+        Title="информация" Height="358" Width="660">
+    <Grid>
+        <Image Margin="10,10,10,300" Stretch="Fill" Source="zadanie2.png"/>
+        <Image Margin="10,59,10,171" Stretch="Fill" Source="zadanie3.png"/>
+    </Grid>
+</Window>

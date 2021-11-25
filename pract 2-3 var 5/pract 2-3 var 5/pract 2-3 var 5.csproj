@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>pract_2_3_var_5</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <Win32Resource />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MainWindow.xaml.cs~RF815a400.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lib_2\Lib_2.csproj" />
+    <ProjectReference Include="..\Lib_3\Lib_3.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LibMas">
+      <HintPath>..\..\LibMas\LibMas\bin\Debug\netcoreapp3.1\LibMas.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
