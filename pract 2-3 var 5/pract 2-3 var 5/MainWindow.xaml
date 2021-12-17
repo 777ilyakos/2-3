@@ -25,7 +25,7 @@
         <DataGrid x:Name="masData"  ColumnWidth="45" CanUserAddRows="False" CellEditEnding="ArrayData_CellEditEnding" Margin="10,49,0,0" HorizontalAlignment="Left" Width="513" Height="169" VerticalAlignment="Top"></DataGrid>
         <GroupBox Header="Настройка массива" Margin="10,0,0,67" HorizontalAlignment="Left" Width="346" Height="102" VerticalAlignment="Bottom">
             <Grid>
-                <TextBox x:Name="SizeArray" Text="" MaxLines="1" Margin="10,10,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="3"></TextBox>
+                <TextBox x:Name="SizeArray" Text="" MaxLines="1" Margin="10,10,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"  MaxLength="3"></TextBox>
                 <Label Content="- количество чисел" Margin="136,10,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="198"></Label>
                 <Button Content="Заполнить" Click="ArrayFill_Click" Margin="10,42,0,0" HorizontalAlignment="Left" Width="103" Height="27" VerticalAlignment="Top"></Button>
                 <Button Content="Очистить массив" Click="ArrayClear_Click" ToolTip="Очистить массив" HorizontalAlignment="Center" Width="98" Height="26" VerticalAlignment="Top" Margin="0,43,0,0"/>
@@ -46,9 +46,9 @@
         </GroupBox>
         <GroupBox Header="Настройка матрици" Margin="705,0,0,67" HorizontalAlignment="Left" Width="346" Height="102" VerticalAlignment="Bottom">
             <Grid>
-                <TextBox x:Name="sizeMatrix1" Text="" MaxLines="1" Margin="10,10,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="103" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="3"/>
+                <TextBox x:Name="sizeMatrix1" Text="" MaxLines="1" Margin="10,10,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="103"  MaxLength="3"/>
                 <Button Content="Заполнить" ToolTip="Создать и заполнить матрицу" Click="MatrixFill_Click" Margin="118,10,0,0" HorizontalAlignment="Left" Width="118" Height="28" VerticalAlignment="Top"/>
-                <TextBox x:Name="sizeMatrix2" Text="" MaxLines="1" Margin="10,43,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="103" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="3"/>
+                <TextBox x:Name="sizeMatrix2" Text="" MaxLines="1" Margin="10,43,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="103"  MaxLength="3"/>
                 <Button Content="Очистить матрицу"  Click="MatrixClear_Click" HorizontalAlignment="Left" Width="118" Height="26" VerticalAlignment="Top" Margin="118,43,0,0"/>
             </Grid>
         </GroupBox>

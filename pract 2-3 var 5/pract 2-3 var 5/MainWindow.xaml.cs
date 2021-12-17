@@ -38,20 +38,24 @@ namespace pract_2_3_var_5
             //Определяем номер столбца
             int columnIndex = e.Column.DisplayIndex;
             //Заносим  отредоктированое значение в соответствующую ячейку массива
-            if (Int32.TryParse(((TextBox)e.EditingElement).Text, out array[columnIndex]))
-            { }
-            else MessageBox.Show("Неверные данные!", "Ошибка");
+            if (!Int32.TryParse(((TextBox)e.EditingElement).Text, out array[columnIndex]))
+                MessageBox.Show("Неверные данные!", "Ошибка");
         }
         private void MatrixData_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
         {
-            //Определяем номер столбца
-            int columnIndex = e.Column.DisplayIndex;
-            //Определяем номер строки
-            int rowIndex = e.Row.GetIndex();
-            //Заносим полученное значение в массив
-            if (Int32.TryParse(((TextBox)e.EditingElement).Text, out matrix[rowIndex, columnIndex]))
-            { }
-            else MessageBox.Show("Неверные данные!", "Ошибка");
+            try
+            {
+                //Определяем номер столбца
+                int columnIndex = e.Column.DisplayIndex;
+                //Определяем номер строки
+                int rowIndex = e.Row.GetIndex();
+                //Заносим полученное значение в массив
+                matrix[rowIndex, columnIndex] = Convert.ToInt32(((TextBox)e.EditingElement).Text);
+            }
+            catch
+            {
+                MessageBox.Show("Неверные данные!", "Ошибка");
+            }
         }
 
         private void ArrayFill_Click(object sender, RoutedEventArgs e)
@@ -69,7 +73,7 @@ namespace pract_2_3_var_5
         private void MatrixFill_Click(object sender, RoutedEventArgs e)
         {
             //Проверка поля на корректность введенных данных
-            if ((Int32.TryParse(sizeMatrix1.Text, out int count1) && count1 > 0) && (Int32.TryParse(sizeMatrix2.Text, out int count2) && count2 > 0))
+            if (Int32.TryParse(sizeMatrix1.Text, out int count1) && count1 > 0 && Int32.TryParse(sizeMatrix2.Text, out int count2) && count2 > 0)
             {
                 matrix = arrayHelper.Create(count1, count2);
                 arrayHelper.Fill(matrix, 100);
@@ -131,20 +135,10 @@ namespace pract_2_3_var_5
         {
             InfoWindow info = new InfoWindow();
             info.Show();
-            //MessageBox.Show("Разработчик - Косоуров Илья \n\n ты обратился не туда","не инфо", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-        }
-
-        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            int val;
-            if (!Int32.TryParse(e.Text, out val))
-            {
-                e.Handled = true; // отклоняем ввод
-            }
         }
     }
 }
